@@ -1,0 +1,20 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8862
+spring:
+  application:
+    name: service-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+          lower-case-service-id: true  #表明gateway开启服务注册和发现的功能
+      routes:
+      - id: gateway001
+        uri: lb://eureka-client  #目标地址
+        predicates:
+          - Path=/client/** #路由规则

@@ -1,18 +1,18 @@
-#spring:
-#  application:
-#    name: eureka-server
-#server:
-#  host: localhost
-#  port: 8761
-#eureka:
-#  client:
-#    register-with-eureka: false
-#    fetch-registry: false
-#    service-url:
-#      default-zone: http://${server.host}/${server.port}/eureka/
-
-
-
 spring:
-  profiles:
-    active: peer2
+  application:
+    name: eureka-server
+server:
+  host: localhost
+  port: 8761
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${server.host}:${server.port}/eureka/
+
+
+
+#spring:
+#  profiles:
+#    active: peer2
